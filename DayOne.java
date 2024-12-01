@@ -23,7 +23,7 @@ public class DayOne {
         }
     
         public static ArrayList<String> dayOneFile() {
-            ArrayList<String> input = readFile("DayOneMin.txt");
+            ArrayList<String> input = readFile("DayOne.txt");
             ArrayList<String> splitInput = new ArrayList<>();
             String tempString;
             String[] current;
@@ -37,7 +37,7 @@ public class DayOne {
         return splitInput;
     }
 
-    public static void main(String[] args) {
+    public static void partOne() {
         ArrayList<String> input = dayOneFile();
         List<Integer> oddNumbers = new ArrayList<>();
         List<Integer> evenNumbers = new ArrayList<>();
@@ -65,4 +65,35 @@ public class DayOne {
         }
         System.out.println(total);
     }
+
+    public static void main(String[] args) {
+        ArrayList<String> input = dayOneFile();
+        List<Integer> oddNumbers = new ArrayList<>();
+        List<Integer> evenNumbers = new ArrayList<>();
+        Integer temp;
+        for (int i = 0; i < input.size(); i++)
+        {
+            temp = Integer.parseInt(input.get(i));
+            if(i % 2 == 0) {
+                oddNumbers.add(temp);
+            } else {
+                evenNumbers.add(temp);
+            }
+        }
+        int total = 0;
+        int elementToCount;
+        int count;
+        for (int i = 0; i < oddNumbers.size(); i++) {
+            elementToCount = oddNumbers.get(i);
+            count = 0;
+            for (Object j : evenNumbers)
+            { 
+                if (j.equals(elementToCount)) { 
+                    count++; 
+                } 
+            } 
+            total += count*oddNumbers.get(i);
+        }
+    }
 }
+//molar ratios
