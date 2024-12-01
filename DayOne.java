@@ -33,7 +33,6 @@ public class DayOne {
                 splitInput.add(current[0]);
                 splitInput.add(current[1]);
             }
-            //every even index is the left number, every odd index is the right number
         return splitInput;
     }
 
@@ -96,4 +95,3 @@ public class DayOne {
         }
     }
 }
-//molar ratios
